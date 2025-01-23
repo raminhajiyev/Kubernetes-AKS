@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Kubernetes manifests'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)'
+    artifact: 'k8s-manifests'
